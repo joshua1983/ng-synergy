@@ -12,8 +12,13 @@ export class LoginService{
       usuario: usuario,
       password: password
     }).pipe(map(user => {
+      console.log(user);
       if (user){
-        localStorage.setItem('user',JSON.stringify(user));
+        if (user.error == 1){
+          return user.error;
+        }else{
+          localStorage.setItem('user',JSON.stringify(user));
+        }
       }
       return user;
     }))
