@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
         return;
     }
-
     this.loginService.login(this.f.username.value, this.f.password.value)
         .subscribe(
             data => {
