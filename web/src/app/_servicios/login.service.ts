@@ -15,7 +15,6 @@ export class LoginService{
 
     return this.http.post<any>('http://admin.yesynergy.com/index.php/mobile/autenticarEstudiante',body)
     .pipe(map(user => {
-      console.log(user);
       if (user){
         if (user.error == 1){
           return user.error;
